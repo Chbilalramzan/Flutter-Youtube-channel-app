@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "437224085082",
-    "project_id": "happy-shouket-f7efd",
-    "storage_bucket": "happy-shouket-f7efd.appspot.com"
+    "project_number": "187376157385",
+    "project_id": "happyshouket-898fb",
+    "storage_bucket": "happyshouket-898fb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:437224085082:android:1e668579530c62d8e46a63",
+        "mobilesdk_app_id": "1:187376157385:android:5228ea711e7fa3bba68318",
         "android_client_info": {
           "package_name": "com.tome.happy_shouket"
         }
       },
       "oauth_client": [
         {
-          "client_id": "437224085082-ivsf736v1qio1ngvqqvfb3mqpc5ajglk.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.tome.happy_shouket",
-            "certificate_hash": "cc27699cb1da2dd5d903443dd4e1ff3e3592171b"
-          }
-        },
-        {
-          "client_id": "437224085082-2qa49peg2tnnig60a2hv0ss2pvbh2hvb.apps.googleusercontent.com",
+          "client_id": "187376157385-50f8np2h0fcupfed72v3kuda35rlut3q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBPe0EhOPRWFCgzZ6gnKgL6eUG79iaY56g"
+          "current_key": "AIzaSyAiK3xX8QnF2lThpcaN9p5rHAEclRDpouM"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "437224085082-2qa49peg2tnnig60a2hv0ss2pvbh2hvb.apps.googleusercontent.com",
+              "client_id": "187376157385-50f8np2h0fcupfed72v3kuda35rlut3q.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
