@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/constants/urls.dart';
 import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/screens/tabs_screen.dart';
 import 'package:happy_shouket/src/screens/video_items.dart';
@@ -106,8 +107,8 @@ class HomeScreen extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   VideoItems(
-                    videoPlayerController: VideoPlayerController.asset(
-                        'assets/session1/Intro_video.mp4'),
+                    videoPlayerController:
+                        VideoPlayerController.network(Url.Intro_Video),
                     looping: true,
                     autoplay: true,
                   ),
