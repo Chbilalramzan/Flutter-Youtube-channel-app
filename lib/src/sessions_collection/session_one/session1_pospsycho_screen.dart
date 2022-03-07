@@ -20,9 +20,6 @@ class SessionOnePosItems extends StatefulWidget {
 class _SessionOnePosItemsState extends State<SessionOnePosItems> {
   VideosList _videosList;
   bool _loading;
-  String _playListId;
-  String _nextPageToken;
-  ScrollController _scrollController;
   PageInfo _pageInfo;
 
   @override
@@ -30,26 +27,20 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
     // TODO: implement initState
     super.initState();
     _loading = true;
-    _nextPageToken = '';
-    _scrollController = ScrollController();
     _pageInfo = PageInfo(totalResults: 0, resultsPerPage: 0);
     _videosList = VideosList(
         etag: '', kind: '', nextPageToken: '', pageInfo: _pageInfo, videos: []);
     _videosList.videos = [];
-    _getChannelInfo();
-    print('Hello');
-  }
-
-  _getChannelInfo() async {
-    await _loadVideos();
+    _loadVideos();
   }
 
   _loadVideos() async {
     VideosList tempVideosList = await Services.getVideosList();
-    _nextPageToken = tempVideosList.nextPageToken;
-    _videosList.videos.addAll(tempVideosList.videos);
-    print('videos: ${_videosList.videos.length}');
-    print('_nextPageToken $_nextPageToken');
+    for (var item in tempVideosList.videos) {
+      if (item.video.title.contains('psychology')) {
+        _videosList.videos.add(item);
+      }
+    }
     setState(() {
       _loading = false;
     });
@@ -60,8 +51,7 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
     ChewieController _chewieController;
     return Scaffold(
       appBar: AppBar(
-        title:
-            Text(_loading ? 'Loading...' : 'POSITIVE PSYCHOLOGY SESSION ONE'),
+        title: Text(_loading ? 'Loading...' : 'POSITIVE PSYCHOLOGY'),
         actions: [
           TextButton(
             onPressed: () =>
@@ -78,30 +68,16 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
           ),
         ],
       ),
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          children: [
-            Container(),
-            // _buildInfoView(),
-            Expanded(
-              // child: NotificationListener<ScrollEndNotification>(
-              //   onNotification: (ScrollNotification notification) {
-              //     // if (_videosList.videos.length >=
-              //     //     int.parse(_item.statistics.videoCount)) {
-              //     //   return true;
-              //     // }
-              //     if (notification.metrics.pixels ==
-              //         notification.metrics.maxScrollExtent) {
-              //       _loadVideos();
-              //     }
-              //     return true;
-              //   },
-              child: _loading
-                  ? CircularProgressIndicator()
-                  : ListView.builder(
-                      // controller: _scrollController,
-                      itemCount: 6,
+      body: _loading
+          ? Center(child: CircularProgressIndicator())
+          : Container(
+              color: Colors.white,
+              child: Column(
+                children: [
+                  Container(),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: _videosList.videos.length,
                       itemBuilder: (context, index) {
                         VideoItem videoItem = _videosList.videos[index];
                         return InkWell(
@@ -119,22 +95,28 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
                             child: Row(
                               children: [
                                 CachedNetworkImage(
+                                  width: 400,
+                                  height: 300,
+                                  fit: BoxFit.contain,
                                   imageUrl:
                                       videoItem.video.thumbnails.medium.url,
                                 ),
                                 const SizedBox(width: 16),
-                                Text(videoItem.video.title),
+                                Text(videoItem.video.title,
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500)),
                               ],
                             ),
                           ),
                         );
                       },
                     ),
+                  ),
+                  // ),
+                ],
+              ),
             ),
-            // ),
-          ],
-        ),
-      ),
       //  ListView(
       //   children: <Widget>[
       //     VideoItems(
