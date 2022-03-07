@@ -19,7 +19,7 @@ class Services {
     };
     Uri uri = Uri.https(
       Url.YOUTUBE_BASE_URL,
-      'search',
+      '/youtube/v3/search',
       parameters,
     );
     Response response = await http.get(uri, headers: headers);

@@ -7,5 +7,5 @@ class Url {
 
   static const String YOUTUBE_CHANNEL_ID = 'UC1aa2uHVqHSE_yRGn1HfxgQ';
 
-  static const String YOUTUBE_BASE_URL = 'www.googleapis.com/youtube/v3/';
+  static const String YOUTUBE_BASE_URL = 'www.googleapis.com';
 }
