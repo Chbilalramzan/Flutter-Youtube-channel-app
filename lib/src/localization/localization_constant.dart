@@ -32,7 +32,8 @@ Locale _locale(String languageCode) {
       _temp = Locale(languageCode, 'PK');
       break;
     default:
-      _temp = Locale(ENGLISH, 'AU');
+      _temp = Locale(languageCode, 'PK'); //For Urdu
+    // _temp = Locale(ENGLISH, 'AU'); // For English
   }
   return _temp;
 }

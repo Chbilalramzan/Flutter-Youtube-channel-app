@@ -90,6 +90,14 @@ class _AuthFormState extends State<AuthForm> {
   String get _email => _emailController.text;
   String get _password => _emailController.text;
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    // Locale _temp = await setLocale('ur');
+    // MyApp.setLocale(context, _temp);
+    super.initState();
+  }
+
   void _changeLanguage(Language language) async {
     Locale _temp = await setLocale(language.languageCode);
     MyApp.setLocale(context, _temp);
@@ -681,47 +689,52 @@ class _AuthFormState extends State<AuthForm> {
   Widget translator(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: _height / 20.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          SizedBox(
-            width: 200,
-          ),
-          // height: 50.0,
-          // alignment: Alignment.center,
-          // padding: EdgeInsets.only(bottom: 20.0),
-          // color: Color.fromRGBO(255, 254, 229, 1),
-          DropdownButton(
-            onChanged: (Language language) {
-              _changeLanguage(language);
-            },
-            underline: SizedBox(),
-            icon: Icon(
-              Icons.language,
-              size: 40.0,
-              color: Colors.orange,
-              semanticLabel: 'Translate',
+      child: Align(
+        alignment: Alignment.center,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text(getTranslated(context, "Language"),
+                style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black54,
+                    fontSize: _large ? 19 : (_medium ? 17 : 15))),
+            // height: 50.0,
+            // alignment: Alignment.center,
+            // padding: EdgeInsets.only(bottom: 20.0),
+            // color: Color.fromRGBO(255, 254, 229, 1),
+            DropdownButton(
+              onChanged: (Language language) {
+                _changeLanguage(language);
+              },
+              underline: SizedBox(),
+              icon: Icon(
+                Icons.language,
+                size: 40.0,
+                color: Colors.orange,
+                semanticLabel: 'Translate',
+              ),
+              items: Language.languageList()
+                  .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
+                        value: lang,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            Text(
+                              lang.name,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            Text(
+                              lang.flag,
+                              style: TextStyle(fontSize: 30),
+                            ),
+                          ],
+                        ),
+                      ))
+                  .toList(),
             ),
-            items: Language.languageList()
-                .map<DropdownMenuItem<Language>>((lang) => DropdownMenuItem(
-                      value: lang,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          Text(
-                            lang.name,
-                            style: TextStyle(fontSize: 20),
-                          ),
-                          Text(
-                            lang.flag,
-                            style: TextStyle(fontSize: 30),
-                          ),
-                        ],
-                      ),
-                    ))
-                .toList(),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
