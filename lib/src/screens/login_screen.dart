@@ -153,7 +153,8 @@ class _AuthFormState extends State<AuthForm> {
           _authData['email'],
           _authData['password'],
         );
-        Navigator.pushNamed(context, HomeScreen.routeName);
+        Navigator.pushNamed(context, TabsScreen.routeName);
+        // Navigator.pushNamed(context, HomeScreen.routeName);
       }
     } on HttpException catch (error) {
       var errorMessage = 'Authentication failed';

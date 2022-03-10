@@ -37,19 +37,19 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             )),
         // centerTitle: true,
-        actions: <Widget>[
-          TextButton(
-            onPressed: () => Navigator.pushNamed(context, TabsScreen.routeName),
-            child: Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
+        // actions: <Widget>[
+        //   TextButton(
+        //     onPressed: () => Navigator.pushNamed(context, TabsScreen.routeName),
+        //     child: Text(
+        //       'Next',
+        //       style: TextStyle(
+        //         fontSize: 20.0,
+        //         color: Colors.black87,
+        //         fontWeight: FontWeight.bold,
+        //       ),
+        //     ),
+        //   ),
+        // ],
       ),
       drawer: AppDrawer(),
       body: SingleChildScrollView(
@@ -109,8 +109,9 @@ class HomeScreen extends StatelessWidget {
                   VideoItems(
                     videoPlayerController:
                         VideoPlayerController.network(Url.Intro_Video),
+                    image: Url.Intro_Video_Thumbnail,
                     looping: true,
-                    autoplay: true,
+                    autoplay: false,
                   ),
                 ],
               ),

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:happy_shouket/src/widgets/video_scaffold.dart';
@@ -7,12 +8,14 @@ class VideoItems extends StatefulWidget {
   final VideoPlayerController videoPlayerController;
   final bool looping;
   final bool autoplay;
+  final String image;
 
   VideoItems({
     @required this.videoPlayerController,
     this.looping,
     this.autoplay,
     Key key,
+    this.image,
   }) : super(key: key);
 
   @override
@@ -38,8 +41,16 @@ class _VideoItemsState extends State<VideoItems> {
         backgroundColor: Colors.grey,
         bufferedColor: Colors.lightGreenAccent,
       ),
-      placeholder: Container(
-        color: Colors.orangeAccent,
+      placeholder: Align(
+        alignment: Alignment.center,
+        child: Container(
+          // color: Colors.orangeAccent,
+          child: CachedNetworkImage(
+              width: 500,
+              height: 500,
+              fit: BoxFit.contain,
+              imageUrl: widget.image),
+        ),
       ),
       routePageBuilder: (BuildContext context, Animation<double> animation,
           Animation<double> secondAnimation, provider) {

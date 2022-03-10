@@ -36,7 +36,8 @@ class _SessionOneSocialState extends State<SessionOneSocial> {
   _loadVideos() async {
     VideosList tempVideosList = await Services.getVideosList();
     for (var item in tempVideosList.videos) {
-      if (item.video.title.contains('social')) {
+      if (item.video.title.contains('social') &&
+          item.video.title.contains('Session 1')) {
         _videosList.videos.add(item);
       }
     }

@@ -5,6 +5,7 @@ import 'package:happy_shouket/src/providers/database.dart';
 import 'package:happy_shouket/src/screens/home_screen.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
 import 'package:happy_shouket/src/screens/phone_auth_screen.dart';
+import 'package:happy_shouket/src/screens/tabs_screen.dart';
 import 'package:provider/provider.dart';
 
 class LandingPage extends StatelessWidget {
@@ -28,7 +29,7 @@ class LandingPage extends StatelessWidget {
           }
           return Provider<Database>(
             create: (_) => databaseBuilder(user.uid),
-            child: HomeScreen(),
+            child: TabsScreen(),
           );
         }
         return Scaffold(

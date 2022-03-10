@@ -95,7 +95,8 @@ class _SessionOneSpiritualState extends State<SessionOneSpiritual> {
   _loadVideos() async {
     VideosList tempVideosList = await Services.getVideosList();
     for (var item in tempVideosList.videos) {
-      if (item.video.title.contains('spirituality')) {
+      if (item.video.title.contains('spirituality') &&
+          item.video.title.contains('Session 1')) {
         _videosList.videos.add(item);
       }
     }

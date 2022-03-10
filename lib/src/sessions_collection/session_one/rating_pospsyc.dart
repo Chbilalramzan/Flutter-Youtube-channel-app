@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:happy_shouket/src/sessions_collection/session_two/sessions_two_screen.dart';
 
 class PosRatingScreen extends StatefulWidget {
   static const String routeName = 'pos_rating_screen';

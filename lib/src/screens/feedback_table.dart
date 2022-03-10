@@ -38,21 +38,21 @@ class _FeedbackDataState extends State<FeedbackData> {
     return Scaffold(
       appBar: AppBar(
         title: Text('USER FEEDBACK REPORT'),
-        actions: [
-          TextButton(
-            onPressed: () =>
-                // signout();
-                Navigator.pushNamed(context, SessionThreeScreen.routeName),
-            child: Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ],
+        // actions: [
+        //   TextButton(
+        //     onPressed: () =>
+        //         // signout();
+        //         Navigator.pushNamed(context, SessionThreeScreen.routeName),
+        //     child: Text(
+        //       'Next',
+        //       style: TextStyle(
+        //         fontSize: 20.0,
+        //         color: Colors.black87,
+        //         fontWeight: FontWeight.bold,
+        //       ),
+        //     ),
+        //   ),
+        // ],
       ),
       body: StreamBuilder<QuerySnapshot>(
         stream: firestoreInstance.collection('feedback').snapshots(),

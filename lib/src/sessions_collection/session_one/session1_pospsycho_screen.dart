@@ -37,7 +37,8 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
   _loadVideos() async {
     VideosList tempVideosList = await Services.getVideosList();
     for (var item in tempVideosList.videos) {
-      if (item.video.title.contains('psychology')) {
+      if (item.video.title.contains('psychology') &&
+          item.video.title.contains('Session 1')) {
         _videosList.videos.add(item);
       }
     }

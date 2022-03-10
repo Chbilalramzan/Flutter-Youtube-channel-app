@@ -37,7 +37,8 @@ class _SessionOneEduItemsState extends State<SessionOneEduItems> {
   _loadVideos() async {
     VideosList tempVideosList = await Services.getVideosList();
     for (var item in tempVideosList.videos) {
-      if (item.video.title.contains('psychoeducation')) {
+      if (item.video.title.contains('psychoeducation') &&
+          item.video.title.contains('Session 1')) {
         _videosList.videos.add(item);
       }
     }
