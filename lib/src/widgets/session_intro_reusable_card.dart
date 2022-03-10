@@ -1,11 +1,14 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/constants/urls.dart';
 import 'package:happy_shouket/src/widgets/video_scaffold.dart';
 import 'package:video_player/video_player.dart';
 
 class IntroReusableCard extends StatefulWidget {
   // IntroReusableCard({@required this.colour, this.cardChild, this.onPress});  // const ReusableCard({Key key,}) : super(key: key);
 
+  const IntroReusableCard({Key key}) : super(key: key);
   @override
   _IntroReusableCardState createState() => _IntroReusableCardState();
 }
@@ -13,14 +16,13 @@ class IntroReusableCard extends StatefulWidget {
 class _IntroReusableCardState extends State<IntroReusableCard> {
   TargetPlatform _platform;
   VideoPlayerController _videoPlayerController1;
-
   ChewieController _chewieController;
 
   @override
   void initState() {
     super.initState();
     _videoPlayerController1 =
-        VideoPlayerController.asset('assets/session1/session_intro.mp4');
+        VideoPlayerController.network(Url.Session_Intro_Video);
 
     _chewieController = ChewieController(
         videoPlayerController: _videoPlayerController1,
@@ -34,8 +36,16 @@ class _IntroReusableCardState extends State<IntroReusableCard> {
           backgroundColor: Colors.grey,
           bufferedColor: Colors.lightGreenAccent,
         ),
-        placeholder: Container(
-          color: Colors.orangeAccent,
+        placeholder: Align(
+          alignment: Alignment.center,
+          child: Container(
+            // color: Colors.orangeAccent,
+            child: CachedNetworkImage(
+                width: 500,
+                height: 500,
+                fit: BoxFit.contain,
+                imageUrl: Url.Thumbnail_Session_Intro_Video),
+          ),
         ),
         autoInitialize: true,
         errorBuilder: (context, errorMessage) {
@@ -100,7 +110,7 @@ class _IntroReusableCardState extends State<IntroReusableCard> {
                     _chewieController = ChewieController(
                       videoPlayerController: _videoPlayerController1,
                       aspectRatio: 3 / 2,
-                      autoPlay: true,
+                      autoPlay: false,
                     );
                   });
                 },

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:happy_shouket/src/constants/constants.dart';
 import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/screens/feedback_table.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/session_six_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_screen.dart';
 import 'package:happy_shouket/src/widgets/feedback_formfield.dart';
 import 'package:happy_shouket/src/widgets/feedback_raisedfab.dart';
@@ -93,7 +94,7 @@ class _SessionFiveFeedbackScreenState extends State<SessionFiveFeedbackScreen> {
           .catchError((error) => "print(failed:$error)");
       print(_feedbackValue);
       print(additionalComments);
-      Navigator.pushReplacementNamed(context, SessionThreeScreen.routeName);
+      Navigator.pushReplacementNamed(context, SessionSixScreen.routeName);
     }
   }
 

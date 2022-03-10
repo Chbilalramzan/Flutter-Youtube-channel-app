@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
+import 'package:happy_shouket/src/sessions_collection/session_three/session_three_feedback.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_positive.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_psychoedu.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_social.dart';
@@ -168,7 +169,7 @@ class _SessionThreeScreenState extends State<SessionThreeScreen> {
           ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushNamed(context, EduRatingScreen.routeName);
+          Navigator.pushNamed(context, SessionThreeFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
         child: Text('Next'),
