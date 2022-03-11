@@ -7,6 +7,10 @@ import 'package:happy_shouket/src/screens/intervention_rating.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_feedback.dart';
 import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_feedback.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_spiritual.dart';
 import 'package:happy_shouket/src/widgets/session_intro_reusable_card.dart';
 import '../session_one/session1_psychoedu_screen.dart';
 import 'package:happy_shouket/src/widgets/icon_content.dart';
@@ -78,26 +82,10 @@ class _SessionSixScreenState extends State<SessionSixScreen> {
                       child: ReusableCard(
                         onPress: () {
                           setState(() {
-                            selectedCard = CardType.spiritual;
-                          });
-                          Navigator.pushNamed(
-                              context, SessionOneEduItems.routeName);
-                        },
-                        colour: selectedCard == CardType.spiritual
-                            ? activeCardColour
-                            : inactiveCardColour,
-                        cardChild: IconContent(
-                          icon: FontAwesomeIcons.handHoldingMedical,
-                          label: getTranslated(context, "psycho_med"),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: ReusableCard(
-                        onPress: () {
-                          setState(() {
                             selectedCard = CardType.positivePsycho;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSixSpiritual.routeName);
                         },
                         colour: selectedCard == CardType.positivePsycho
                             ? activeCardColour
@@ -105,6 +93,24 @@ class _SessionSixScreenState extends State<SessionSixScreen> {
                         cardChild: IconContent(
                           icon: FontAwesomeIcons.smileBeam,
                           label: getTranslated(context, "spiritual"),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: ReusableCard(
+                        onPress: () {
+                          setState(() {
+                            selectedCard = CardType.psychoMed;
+                          });
+                          Navigator.pushNamed(
+                              context, SessionSixPosPsycho.routeName);
+                        },
+                        colour: selectedCard == CardType.psychoMed
+                            ? activeCardColour
+                            : inactiveCardColour,
+                        cardChild: IconContent(
+                          icon: FontAwesomeIcons.quran,
+                          label: getTranslated(context, "positive_psycho"),
                         ),
                       ),
                     ),
@@ -120,6 +126,8 @@ class _SessionSixScreenState extends State<SessionSixScreen> {
                           setState(() {
                             selectedCard = CardType.social;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSixSocial.routeName);
                         },
                         colour: selectedCard == CardType.social
                             ? activeCardColour
@@ -134,15 +142,17 @@ class _SessionSixScreenState extends State<SessionSixScreen> {
                       child: ReusableCard(
                         onPress: () {
                           setState(() {
-                            selectedCard = CardType.psychoMed;
+                            selectedCard = CardType.spiritual;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSixPsychoedu.routeName);
                         },
-                        colour: selectedCard == CardType.psychoMed
+                        colour: selectedCard == CardType.spiritual
                             ? activeCardColour
                             : inactiveCardColour,
                         cardChild: IconContent(
-                          icon: FontAwesomeIcons.quran,
-                          label: getTranslated(context, "positive_psycho"),
+                          icon: FontAwesomeIcons.handHoldingMedical,
+                          label: getTranslated(context, "psycho_med"),
                         ),
                       ),
                     ),
