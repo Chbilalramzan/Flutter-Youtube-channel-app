@@ -6,6 +6,10 @@ import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_feedback.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_spiritual.dart';
 import 'package:happy_shouket/src/widgets/session_intro_reusable_card.dart';
 import '../session_one/session1_psychoedu_screen.dart';
 import 'package:happy_shouket/src/widgets/icon_content.dart';
@@ -80,7 +84,7 @@ class _SessionSevenScreenState extends State<SessionSevenScreen> {
                             selectedCard = CardType.psychoMed;
                           });
                           Navigator.pushNamed(
-                              context, SessionOneEduItems.routeName);
+                              context, SessionSevenPsychoedu.routeName);
                         },
                         colour: selectedCard == CardType.psychoMed
                             ? activeCardColour
@@ -97,6 +101,8 @@ class _SessionSevenScreenState extends State<SessionSevenScreen> {
                           setState(() {
                             selectedCard = CardType.spiritual;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSevenSpiritual.routeName);
                         },
                         colour: selectedCard == CardType.spiritual
                             ? activeCardColour
@@ -119,6 +125,8 @@ class _SessionSevenScreenState extends State<SessionSevenScreen> {
                           setState(() {
                             selectedCard = CardType.positivePsycho;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSevenPosPsycho.routeName);
                         },
                         colour: selectedCard == CardType.positivePsycho
                             ? activeCardColour
@@ -135,6 +143,8 @@ class _SessionSevenScreenState extends State<SessionSevenScreen> {
                           setState(() {
                             selectedCard = CardType.social;
                           });
+                          Navigator.pushNamed(
+                              context, SessionSevenSocial.routeName);
                         },
                         colour: selectedCard == CardType.social
                             ? activeCardColour

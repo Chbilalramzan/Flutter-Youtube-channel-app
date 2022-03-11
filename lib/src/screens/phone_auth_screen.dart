@@ -135,7 +135,7 @@ class _MobileAuthScreen extends State<MobileAuthScreen> {
 
   Widget phoneTextFormField() {
     return TextFormField(
-      keyboardType: TextInputType.number,
+      keyboardType: TextInputType.text,
       decoration: InputDecoration(
         prefixIcon: Padding(
           padding: const EdgeInsetsDirectional.only(start: 10.0),
@@ -211,7 +211,7 @@ class _MobileAuthScreen extends State<MobileAuthScreen> {
             color: Colors.blue,
             onPressed: () async {
               codeSent
-                  ? auth.signInWithOTP(smsCode, verificationId)
+                  ? auth.signInWithOTP(smsCode, verificationId, context)
                   : verifyMobileNumber(mobileNo);
             },
             textColor: Colors.black,

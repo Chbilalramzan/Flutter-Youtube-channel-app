@@ -54,23 +54,25 @@ class _FeedbackDataState extends State<FeedbackData> {
         //   ),
         // ],
       ),
-      body: StreamBuilder<QuerySnapshot>(
-        stream: firestoreInstance.collection('feedback').snapshots(),
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return LinearProgressIndicator();
-          }
+      body: SingleChildScrollView(
+        child: StreamBuilder<QuerySnapshot>(
+          stream: firestoreInstance.collection('feedback').snapshots(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return LinearProgressIndicator();
+            }
 
-          return DataTable(
-            columns: <DataColumn>[
-              DataColumn(label: Text('UserId')),
-              DataColumn(label: Text('Feedback')),
-              DataColumn(label: Text('Comments')),
-              DataColumn(label: Text('FeedBack Session')),
-            ],
-            rows: _buildList(snapshot.data),
-          );
-        },
+            return DataTable(
+              columns: <DataColumn>[
+                DataColumn(label: Text('UserId')),
+                DataColumn(label: Text('Feedback')),
+                DataColumn(label: Text('Comments')),
+                DataColumn(label: Text('FeedBack Session')),
+              ],
+              rows: _buildList(snapshot.data),
+            );
+          },
+        ),
       ),
     );
   }

@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "187376157385-pirenlqdfq7hn9q52kq5an2dum2ddemj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tome.happy_shouket",
+            "certificate_hash": "e821b325ea098ef1cf312a18dec56a0c4aa8b263"
+          }
+        },
+        {
           "client_id": "187376157385-rbpgma5313n2gotohmj1cgqpuggbkvi1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

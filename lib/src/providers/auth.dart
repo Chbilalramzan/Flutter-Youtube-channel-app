@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:happy_shouket/src/screens/home_screen.dart';
+import 'package:happy_shouket/src/screens/tabs_screen.dart';
 
 abstract class AuthBase {
   User get currentUser;
@@ -12,7 +14,8 @@ abstract class AuthBase {
 
   Future<User> login(String email, String password);
 
-  Future<void> signInWithOTP(String smsCode, String verId);
+  Future<void> signInWithOTP(
+      String smsCode, String verId, BuildContext context);
 
   Future<void> signIn(AuthCredential authCreds);
 
@@ -50,13 +53,15 @@ class Auth implements AuthBase {
   }
 
   @override
-  Future<void> signInWithOTP(String smsCode, String verId) async {
+  Future<void> signInWithOTP(
+      String smsCode, String verId, BuildContext context) async {
     print(smsCode);
     print(verId);
     final AuthCredential authCreds =
         PhoneAuthProvider.credential(verificationId: verId, smsCode: smsCode);
     // BuildContext context;
-    // Navigator.pushReplacementNamed(context, VideoScreen.routeName);
+
+    Navigator.pushReplacementNamed(context, TabsScreen.routeName);
     signIn(authCreds);
   }
 
