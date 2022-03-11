@@ -5,6 +5,10 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
+import 'package:happy_shouket/src/sessions_collection/session_four/sess_four_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_four/sess_four_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_four/sess_four_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_four/sess_four_spiritual.dart';
 import 'package:happy_shouket/src/sessions_collection/session_four/session_four_feedback.dart';
 import 'package:happy_shouket/src/widgets/session_intro_reusable_card.dart';
 import '../session_one/session1_psychoedu_screen.dart';
@@ -78,6 +82,8 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
                           setState(() {
                             selectedCard = CardType.spiritual;
                           });
+                          Navigator.pushNamed(
+                              context, SessionFourSpiritual.routeName);
                         },
                         colour: selectedCard == CardType.spiritual
                             ? activeCardColour
@@ -94,6 +100,8 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
                           setState(() {
                             selectedCard = CardType.positivePsycho;
                           });
+                          Navigator.pushNamed(
+                              context, SessionFourPosPsycho.routeName);
                         },
                         colour: selectedCard == CardType.positivePsycho
                             ? activeCardColour
@@ -117,7 +125,7 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
                             selectedCard = CardType.psychoMed;
                           });
                           Navigator.pushNamed(
-                              context, SessionOneEduItems.routeName);
+                              context, SessionFourPsychoEdu.routeName);
                         },
                         colour: selectedCard == CardType.psychoMed
                             ? activeCardColour
@@ -134,6 +142,8 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
                           setState(() {
                             selectedCard = CardType.social;
                           });
+                          Navigator.pushNamed(
+                              context, SessionFourSocial.routeName);
                         },
                         colour: selectedCard == CardType.social
                             ? activeCardColour
@@ -160,7 +170,7 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // Navigator.pushNamed(context, EduRatingScreen.routeName);
-           Navigator.pushNamed(context, SessionFourFeedbackScreen.routeName);
+          Navigator.pushNamed(context, SessionFourFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
         child: Text('Next'),

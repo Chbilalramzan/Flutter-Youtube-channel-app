@@ -220,7 +220,7 @@ class _MyAppState extends State<MyApp> {
             SessionThreeScreen.routeName: (context) => SessionThreeScreen(),
             SessionThreeSocial.routeName: (context) => SessionThreeSocial(),
             SessionThreePsycho.routeName: (context) => SessionThreePsycho(),
-            SessionThreeSpritual.routeName: (context) => SessionThreePsycho(),
+            SessionThreeSpritual.routeName: (context) => SessionThreeSpritual(),
             SessionThreeFeedbackScreen.routeName: (context) =>
                 SessionThreeFeedbackScreen(),
             SessionFourScreen.routeName: (context) => SessionFourScreen(),
@@ -229,7 +229,7 @@ class _MyAppState extends State<MyApp> {
             SessionFourPosPsycho.routeName: (context) => SessionFourPosPsycho(),
             SessionFourPsychoEdu.routeName: (context) => SessionFourPsychoEdu(),
             SessionFourSocial.routeName: (context) => SessionFourSocial(),
-            SessionFourSpiritual.routeName: (context) => SessionFiveSpiritual(),
+            SessionFourSpiritual.routeName: (context) => SessionFourSpiritual(),
             SessionFiveScreen.routeName: (context) => SessionFiveScreen(),
             SessionFiveFeedbackScreen.routeName: (context) =>
                 SessionFiveFeedbackScreen(),
