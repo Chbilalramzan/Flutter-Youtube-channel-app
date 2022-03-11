@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/providers/auth.dart';
 // import 'package:happy_shouket/src/screens/about_us.dart';
 import 'package:happy_shouket/src/screens/feedback_table.dart';
@@ -100,17 +101,17 @@ class _TabsScreenState extends State<TabsScreen> {
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: getTranslated(context, "home_page"),
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.present_to_all),
-            label: 'Sessions',
+            label: getTranslated(context, "session"),
           ),
           BottomNavigationBarItem(
             backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.report),
-            label: 'Reports',
+            label: getTranslated(context, "reports"),
           ),
         ],
       ),

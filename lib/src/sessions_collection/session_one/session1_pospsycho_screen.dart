@@ -2,6 +2,7 @@
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/models/videos_list.dart';
 import 'package:happy_shouket/src/netwk/youtube.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
@@ -53,14 +54,16 @@ class _SessionOnePosItemsState extends State<SessionOnePosItems> {
     ChewieController _chewieController;
     return Scaffold(
       appBar: AppBar(
-        title: Text(_loading ? 'Loading...' : 'POSITIVE PSYCHOLOGY'),
+        title: Text(_loading
+            ? 'Loading...'
+            : getTranslated(context, 'positive_psycho')),
         actions: [
           TextButton(
             onPressed: () =>
                 //sign out
                 Navigator.pushNamed(context, EduRatingScreen.routeName),
             child: Text(
-              'Next',
+              getTranslated(context, "next_button"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,

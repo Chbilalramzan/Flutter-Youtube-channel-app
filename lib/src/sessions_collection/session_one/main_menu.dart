@@ -49,7 +49,7 @@ class _MenuPageState extends State<MenuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SESSION ONE'),
+        title: Text(getTranslated(context, 'session1')),
         actions: [
           TextButton(
             onPressed: () => {
@@ -57,7 +57,7 @@ class _MenuPageState extends State<MenuPage> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, "signout"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -167,12 +167,12 @@ class _MenuPageState extends State<MenuPage> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushNamed(context, FeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(getTranslated(context, "next_button")),
       ),
     );
   }

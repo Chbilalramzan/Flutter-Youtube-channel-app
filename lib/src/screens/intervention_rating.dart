@@ -42,7 +42,7 @@ class _EduRatingScreenState extends State<EduRatingScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Container(
                         child: Text(
-                      "1. On a scale of 1 to 5, how do you rate our Intervention?",
+                      getTranslated(context, 'rating_Text'),
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 22.0,
@@ -135,7 +135,8 @@ class _EduRatingScreenState extends State<EduRatingScreen> {
                                 padding: const EdgeInsets.all(16.0),
                                 child: Container(
                                     child: Text(
-                                  "Your Rating : $sliderValue",
+                                  getTranslated(context, "your_rating") +
+                                      " : $sliderValue",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 22.0,
@@ -153,7 +154,7 @@ class _EduRatingScreenState extends State<EduRatingScreen> {
                                             BorderRadius.circular(30.0)),
                                     color: Color(0xFF19c916),
                                     child: Text(
-                                      'Submit',
+                                      getTranslated(context, "submit_button"),
                                       style:
                                           TextStyle(color: Color(0xffffffff)),
                                     ),
@@ -174,12 +175,12 @@ class _EduRatingScreenState extends State<EduRatingScreen> {
           ),
         ],
       ),
-      // floatingActionButton: FloatingActionButton(
+      // floatingActionButton: FloatingActionButton.large(
       //   onPressed: () {
       //     Navigator.pushNamed(context, SessionTwoScreen.routeName);
       //   },
       //   // Display the correct icon depending on the state of the player.
-      //   child: Text('Next'),
+      //   child: Text(getTranslated(context, "next_button")),
       //   backgroundColor: const Color(0xFF19c916),
       // ),
     );
@@ -258,7 +259,7 @@ class _EduRatingScreenState extends State<EduRatingScreen> {
               flex: 5,
               child: Container(
                 child: Text(
-                  'Rate the intervention',
+                  getTranslated(context, 'rating_Text1'),
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.w600,

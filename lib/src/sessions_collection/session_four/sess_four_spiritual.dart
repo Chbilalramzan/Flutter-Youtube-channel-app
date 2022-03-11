@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/models/videos_list.dart';
 import 'package:happy_shouket/src/netwk/youtube.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
@@ -49,14 +50,16 @@ class _SessionFourSpiritualState extends State<SessionFourSpiritual> {
     ChewieController _chewieController;
     return Scaffold(
         appBar: AppBar(
-          title: Text('SPIRITUAL SESSION FOUR'),
+          title: Text(getTranslated(context, "spiritual") +
+              " " +
+              getTranslated(context, "session4")),
           actions: [
             TextButton(
               onPressed: () =>
                   //sign out
                   Navigator.pushNamed(context, EduRatingScreen.routeName),
               child: Text(
-                'Next',
+                getTranslated(context, "next_button"),
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.black87,

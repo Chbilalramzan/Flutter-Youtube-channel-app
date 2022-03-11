@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/models/videos_list.dart';
 import 'package:happy_shouket/src/netwk/youtube.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
@@ -111,14 +112,16 @@ class _SessionTwoSocialState extends State<SessionTwoSocial> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('SOCIAL SESSION TWO'),
+          title: Text(getTranslated(context, "social") +
+              " " +
+              getTranslated(context, "session2")),
           actions: [
             TextButton(
               onPressed: () =>
                   //sign out
                   Navigator.pushNamed(context, EduRatingScreen.routeName),
               child: Text(
-                'Next',
+                getTranslated(context, "next_button"),
                 style: TextStyle(
                   fontSize: 20.0,
                   color: Colors.black87,

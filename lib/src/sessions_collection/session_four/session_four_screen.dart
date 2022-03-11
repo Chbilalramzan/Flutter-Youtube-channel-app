@@ -48,7 +48,7 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SESSION FOUR'),
+        title: Text(getTranslated(context, "session4")),
         actions: [
           TextButton(
             onPressed: () => {
@@ -56,7 +56,7 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, "signout"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -167,13 +167,13 @@ class _SessionFourScreenState extends State<SessionFourScreen> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           // Navigator.pushNamed(context, EduRatingScreen.routeName);
           Navigator.pushNamed(context, SessionFourFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(getTranslated(context, "next_button")),
       ),
     );
   }

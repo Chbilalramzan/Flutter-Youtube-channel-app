@@ -54,7 +54,7 @@ class TestVideoScreen extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushReplacementNamed(context, FeedbackScreen.routeName);
         },

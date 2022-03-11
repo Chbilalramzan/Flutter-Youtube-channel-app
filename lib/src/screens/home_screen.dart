@@ -30,7 +30,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.orange[100],
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text('Happy Shouket Home',
+        title: Text(getTranslated(context, "happy_shouket_home"),
             style: TextStyle(
               fontSize: 20.0,
               color: Colors.black87,
@@ -41,7 +41,7 @@ class HomeScreen extends StatelessWidget {
         //   TextButton(
         //     onPressed: () => Navigator.pushNamed(context, TabsScreen.routeName),
         //     child: Text(
-        //       'Next',
+        //       getTranslated(context, "next_button"),
         //       style: TextStyle(
         //         fontSize: 20.0,
         //         color: Colors.black87,
@@ -87,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                         Expanded(
                           flex: 1,
                           child: Text(
-                            "We’re so happy you’re here! The concept is simple: Happy Shouket helps you get motivated, and get more understanding on how to manage ESRD (with your community or on your own)",
+                            getTranslated(context, "home_Text"),
                             style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: _large ? 25 : (_medium ? 50 : 40),

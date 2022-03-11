@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:happy_shouket/src/constants/constants.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/widgets/radio_emoji.dart';
 
 class FeedbackFormField extends StatelessWidget {
@@ -40,7 +41,7 @@ class FeedbackFormField extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
-          '$id) $question',
+          getTranslated(context, question),
           style: kFeedbackFormFieldTextStyle,
         ),
         Row(

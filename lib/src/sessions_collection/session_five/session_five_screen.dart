@@ -49,7 +49,7 @@ class _SessionFiveScreenState extends State<SessionFiveScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Session Five'),
+        title: Text(getTranslated(context, "session5")),
         actions: [
           TextButton(
             onPressed: () => {
@@ -57,7 +57,7 @@ class _SessionFiveScreenState extends State<SessionFiveScreen> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, "signout"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -168,12 +168,12 @@ class _SessionFiveScreenState extends State<SessionFiveScreen> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushNamed(context, SessionFiveFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(getTranslated(context, "next_button")),
       ),
     );
   }

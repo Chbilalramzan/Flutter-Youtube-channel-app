@@ -24,12 +24,7 @@ class SessionSixFeedbackScreen extends StatefulWidget {
 }
 
 class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
-  List<String> _questions = [
-    'This engaging with session made me have a good time during dialysis?',
-    'This activity during dialysis made my experience of dialysis better? ',
-    'This information given during dialysis can improve my life? ',
-    'I am looking forward to the next dialysis session because of the pleasant change due to using the app during dialysis.'
-  ];
+  List<String> _questions = ['fq1', 'fq2', 'fq3', 'fq4'];
   List<int> _feedbackValue = [];
 
   List<bool> _isFormFieldComplete = [];
@@ -112,7 +107,7 @@ class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Please choose appropriate emoji icon for your response',
+                getTranslated(context, "fheading"),
                 style: kFeedbackFormFieldTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -157,7 +152,7 @@ class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
                     radioHandler: (int value) =>
                         _handleRadioButton(entry.key, value),
                     error: _isFormFieldComplete[entry.key]
-                        ? 'This is a required field'
+                        ? getTranslated(context, "require")
                         : null,
                   );
                 }),
@@ -168,7 +163,7 @@ class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
                 ),
                 TextField(
                   decoration: kFeedbackFormFieldDecoration.copyWith(
-                    hintText: 'Additional Comments (Optional)',
+                    hintText: getTranslated(context, 'comments'),
                   ),
                   maxLines: 5,
                   onChanged: (value) => additionalComments = value,
@@ -181,7 +176,7 @@ class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
                   children: [
                     CustomRaisedButton(
                       save: handleSubmitFeedback,
-                      title: 'Submit',
+                      title: getTranslated(context, "submit_button"),
                     ),
                   ],
                 ),
@@ -189,12 +184,12 @@ class _SessionSixFeedbackScreenState extends State<SessionSixFeedbackScreen> {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushNamed(context, FeedbackData.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Test'),
+        child: Text(getTranslated(context, "test")),
       ),
     );
   }

@@ -48,7 +48,7 @@ class _SessionThreeScreenState extends State<SessionThreeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Session Three'),
+        title: Text(getTranslated(context, "session3")),
         actions: [
           TextButton(
             onPressed: () => {
@@ -56,7 +56,7 @@ class _SessionThreeScreenState extends State<SessionThreeScreen> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, 'signout'),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -167,12 +167,12 @@ class _SessionThreeScreenState extends State<SessionThreeScreen> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushNamed(context, SessionThreeFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(getTranslated(context, "next_button")),
       ),
     );
   }

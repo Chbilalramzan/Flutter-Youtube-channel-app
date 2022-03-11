@@ -15,6 +15,7 @@ import 'package:happy_shouket/src/sessions_collection/session_two/session_two_sp
 // import 'package:happy_shouket/src/widgets/session_intro_reusable_card.dart';
 import 'package:happy_shouket/src/widgets/icon_content.dart';
 import 'package:happy_shouket/src/widgets/reusable_card.dart';
+import 'package:happy_shouket/src/widgets/session_intro_reusable_card.dart';
 
 const activeCardColour = Color(0xFFd4b276);
 const inactiveCardColour = Color(0xFFffce00);
@@ -50,7 +51,7 @@ class _SessionTwoScreenState extends State<SessionTwoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SESSION TWO'),
+        title: Text(getTranslated(context, 'session2')),
         actions: [
           TextButton(
             onPressed: () => {
@@ -58,7 +59,7 @@ class _SessionTwoScreenState extends State<SessionTwoScreen> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, "signout"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -72,9 +73,9 @@ class _SessionTwoScreenState extends State<SessionTwoScreen> {
           margin: EdgeInsets.only(top: 15.0),
           child: Column(
             children: <Widget>[
-              // Expanded(
-              //   child: IntroReusableCard(),
-              // ),
+              Expanded(
+                child: IntroReusableCard(),
+              ),
               Expanded(
                 child: Row(
                   children: <Widget>[
@@ -169,12 +170,14 @@ class _SessionTwoScreenState extends State<SessionTwoScreen> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           Navigator.pushNamed(context, SessionTwoFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(
+          getTranslated(context, "next_button"),
+        ),
       ),
     );
   }

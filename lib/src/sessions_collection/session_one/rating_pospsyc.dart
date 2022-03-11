@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/sessions_collection/session_two/sessions_two_screen.dart';
 
 class PosRatingScreen extends StatefulWidget {
@@ -35,7 +36,7 @@ class _PosRatingScreenState extends State<PosRatingScreen> {
                                 padding: const EdgeInsets.all(16.0),
                                 child: Container(
                                     child: Text(
-                                  "On a scale of 1 to 5, how do you rate our Intervention?",
+                                  getTranslated(context, 'rating_Text'),
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 22.0,
@@ -76,12 +77,12 @@ class _PosRatingScreenState extends State<PosRatingScreen> {
           ),
         ),
       ),
-      // floatingActionButton: FloatingActionButton(
+      // floatingActionButton: FloatingActionButton.large(
       //   onPressed: () {
       //     Navigator.pushNamed(context, SessionTwoScreen.routeName);
       //   },
       //   // Display the correct icon depending on the state of the player.
-      //   child: Text('Next'),
+      //   child: Text(getTranslated(context, "next_button")),
       //   backgroundColor: const Color(0xFF19c916),
       // ),
     );

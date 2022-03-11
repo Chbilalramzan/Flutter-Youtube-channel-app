@@ -49,7 +49,7 @@ class _SessionEightScreenState extends State<SessionEightScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Session Eight'),
+        title: Text(getTranslated(context, "session8")),
         actions: [
           TextButton(
             onPressed: () => {
@@ -57,7 +57,7 @@ class _SessionEightScreenState extends State<SessionEightScreen> {
               signOut()
             },
             child: Text(
-              'Sign out',
+              getTranslated(context, "signout"),
               style: TextStyle(
                 fontSize: 20.0,
                 color: Colors.black87,
@@ -168,13 +168,13 @@ class _SessionEightScreenState extends State<SessionEightScreen> {
           // Opacity(opacity: 0.88, child: CustomAppBar()),
 
           ),
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.large(
         onPressed: () {
           // Navigator.pushNamed(context, EduRatingScreen.routeName);
           Navigator.pushNamed(context, SessionEightFeedbackScreen.routeName);
         },
         // Display the correct icon depending on the state of the player.
-        child: Text('Next'),
+        child: Text(getTranslated(context, "next_button")),
       ),
     );
   }

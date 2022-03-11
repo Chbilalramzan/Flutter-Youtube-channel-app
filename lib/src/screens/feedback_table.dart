@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:happy_shouket/src/localization/localization_constant.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_screen.dart';
 
 final firestoreInstance = FirebaseFirestore.instance;
@@ -37,14 +38,14 @@ class _FeedbackDataState extends State<FeedbackData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('USER FEEDBACK REPORT'),
+        title: Text(getTranslated(context, "f")),
         // actions: [
         //   TextButton(
         //     onPressed: () =>
         //         // signout();
         //         Navigator.pushNamed(context, SessionThreeScreen.routeName),
         //     child: Text(
-        //       'Next',
+        //       getTranslated(context, "next_button"),
         //       style: TextStyle(
         //         fontSize: 20.0,
         //         color: Colors.black87,
@@ -90,7 +91,9 @@ class _FeedbackDataState extends State<FeedbackData> {
       return DataRow(cells: [
         DataCell(Text(documentSnapshot['user'].toString())),
         DataCell(Text(documentSnapshot['feedback'].toString())),
-        DataCell(Text(documentSnapshot['comments'].toString())),
+        DataCell(Text(documentSnapshot['comments'] == null
+            ? ""
+            : documentSnapshot['comments'].toString())),
         DataCell(Text(documentSnapshot['feedbackId'].toString())),
       ]);
     }).toList();

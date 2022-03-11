@@ -231,14 +231,14 @@ class _MobileAuthScreen extends State<MobileAuthScreen> {
               child: Center(
                 child: codeSent
                     ? Text(
-                        "Sign In",
+                        getTranslated(context, "login_buttontext"),
                         style: TextStyle(
                           fontSize: _large ? 14 : (_medium ? 12 : 10),
                           fontWeight: FontWeight.w500,
                         ),
                       )
                     : Text(
-                        "Verify",
+                        getTranslated(context, "verify"),
                         style: TextStyle(
                           fontSize: _large ? 16 : (_medium ? 12 : 10),
                           fontWeight: FontWeight.w700,
