@@ -15,6 +15,12 @@ import 'package:happy_shouket/src/screens/feedback_table.dart';
 import 'package:happy_shouket/src/screens/home_screen.dart';
 import 'package:happy_shouket/src/screens/intervention_rating.dart';
 import 'package:happy_shouket/src/screens/login_screen.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/sess_eight_feedback.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/sess_eight_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/sess_eight_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/sess_eight_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/sess_eight_spiritual.dart';
+import 'package:happy_shouket/src/sessions_collection/session_eight/session_eight_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_five/sess_five_feedback.dart';
 import 'package:happy_shouket/src/sessions_collection/session_five/sess_five_positive.dart';
 import 'package:happy_shouket/src/sessions_collection/session_five/sess_five_psychoedu.dart';
@@ -30,6 +36,18 @@ import 'package:happy_shouket/src/sessions_collection/session_four/session_four_
 import 'package:happy_shouket/src/sessions_collection/session_one/rating_pospsyc.dart';
 import 'package:happy_shouket/src/sessions_collection/session_one/session1_social_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_one/session1_spiritual_screen.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_feedback.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/sess_seven_spiritual.dart';
+import 'package:happy_shouket/src/sessions_collection/session_seven/session_seven_screen.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_feedback.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_positive.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_psychoedu.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_social.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/sess_six_spiritual.dart';
+import 'package:happy_shouket/src/sessions_collection/session_six/session_six_screen.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_feedback.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_positive.dart';
 import 'package:happy_shouket/src/sessions_collection/session_three/session_three_psychoedu.dart';
@@ -219,6 +237,33 @@ class _MyAppState extends State<MyApp> {
             SessionFiveSpiritual.routeName: (context) => SessionFiveSpiritual(),
             SessionFivePosPsycho.routeName: (context) => SessionFivePosPsycho(),
             SessionFivePsychoedu.routeName: (context) => SessionFivePsychoedu(),
+            SessionSixScreen.routeName: (context) => SessionSixScreen(),
+            SessionSixSocial.routeName: (context) => SessionSixSocial(),
+            SessionSixFeedbackScreen.routeName: (context) =>
+                SessionSixFeedbackScreen(),
+            SessionSixPsychoedu.routeName: (context) => SessionSixPsychoedu(),
+            SessionSixSpiritual.routeName: (context) => SessionSixSpiritual(),
+            SessionSixPosPsycho.routeName: (context) => SessionSixPosPsycho(),
+            SessionSevenScreen.routeName: (context) => SessionSevenScreen(),
+            SessionSevenFeedbackScreen.routeName: (context) =>
+                SessionSevenFeedbackScreen(),
+            SessionSevenPsychoedu.routeName: (context) =>
+                SessionSevenPsychoedu(),
+            SessionSevenPosPsycho.routeName: (context) =>
+                SessionSevenPosPsycho(),
+            SessionSevenSocial.routeName: (context) => SessionSevenSocial(),
+            SessionSevenSpiritual.routeName: (context) =>
+                SessionSevenSpiritual(),
+            SessionEightScreen.routeName: (context) => SessionEightScreen(),
+            SessionEightFeedbackScreen.routeName: (context) =>
+                SessionEightFeedbackScreen(),
+            SessionEightPsychoedu.routeName: (context) =>
+                SessionEightPsychoedu(),
+            SessionEightPosPsycho.routeName: (context) =>
+                SessionEightPosPsycho(),
+            SessionEightSocial.routeName: (context) => SessionEightSocial(),
+            SessionEightSpiritual.routeName: (context) =>
+                SessionEightSpiritual(),
             SignUpScreen.routeName: (context) => SignUpScreen(),
             SplashScreen.routeName: (context) => SplashScreen(),
             TabsScreen.routeName: (context) => TabsScreen(),
