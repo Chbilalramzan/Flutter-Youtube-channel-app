@@ -12,9 +12,9 @@ class Url {
       'https://i.ytimg.com/vi/6tRdlTsdkNQ/hqdefault.jpg';
 
   static const String YOUTUBE_API_KEY =
-      'AIzaSyDX8uGiHRVyAzYos4rqFkhGGJml3vfSRdo';
+      'your youtube api key ';
 
-  static const String YOUTUBE_CHANNEL_ID = 'UC1aa2uHVqHSE_yRGn1HfxgQ';
+  static const String YOUTUBE_CHANNEL_ID = 'your youtube channel id';
 
   static const String YOUTUBE_BASE_URL = 'www.googleapis.com';
 }
